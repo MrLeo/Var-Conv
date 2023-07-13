@@ -5,7 +5,7 @@ let VarConv = function (var_name) {
 
     // 尝试拆分
     let var_split = [];
-    ['-', '_', ' '].forEach((splitter) => {
+    ['-', '_', ' ', '/', '.'].forEach((splitter) => {
         if (var_name.indexOf(splitter) > 0) {
             var_split = var_name.split(splitter);
         }
