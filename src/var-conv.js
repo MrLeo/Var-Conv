@@ -26,14 +26,14 @@ VarConv.prototype.maps = {
   Snake: { title: '蛇形写法 (下划线命名法)', search: 'sx,shexing,xhx,xiahuaxian,snake,_' },
   Hyphen: { title: '连字符写法 (中划线命名法)', search: 'l,h,lzf,lianzifu,zhx,zhonghuaxian,hyphen,-' },
   Const: { title: '常量名', search: 'clm,changliangming,const' },
+  FilePathCase: { title: '文件路径', search: 'wj,lj' },
+  DotCase: { title: '对象属性', search: 'dx,sx,dot' },
   LocaleLowerCase: { title: '全小写', search: 'qxx,quanxiaoxie,llc,localelowercase' },
   LocaleUpperCase: { title: '全大写', search: 'qdx,quandaxie,luc,localeuppercase' },
   SpaceUpperCase: { title: '空格 全大写', search: ' dx, qdx,kdx,kqd,kgqdx,kongquandaxie,konggequandaxie' },
   SpaceLowerCase: { title: '空格 全小写', search: ' xx, qxx,kxx,kqx,kgqxx,kongquanxiao,konggequanxiaoxie' },
   SpaceUpperCamelCase: { title: '空格 大驼峰', search: ' dtf,kdtf,kgdtf,kongdatuofeng,konggedatuofeng' },
   SpaceCamelCase: { title: '空格 小驼峰', search: ' xtf,kxtf,kongxiaotuofeng,konggexiaotuofeng' },
-  FilePathCase: { title: '文件路径', search: 'wj,lj' },
-  DotCase: { title: '对象属性', search: 'dx,sx,dot' },
 }
 
 // 大驼峰写法 (帕斯卡命名法) UserName
@@ -77,6 +77,16 @@ VarConv.prototype.toConst = function () {
     return this.var_split.join('_').toLocaleUpperCase();
 }
 
+// 文件路径写法
+VarConv.prototype.toFilePathCase = function () {
+    return this.toCamelCase('/');
+}
+
+// 对象属性写法
+VarConv.prototype.toDotCase = function () {
+    return this.toCamelCase('.');
+}
+
 // 全小写
 VarConv.prototype.toLocaleLowerCase = function () {
     return this.origin_var_name.toLocaleLowerCase();
@@ -103,16 +113,6 @@ VarConv.prototype.toSpaceUpperCamelCase = function () {
 // 空格 小驼峰写法
 VarConv.prototype.toSpaceCamelCase = function () {
     return this.toCamelCase(' ');
-}
-
-// 文件路径写法
-VarConv.prototype.toFilePathCase = function () {
-    return this.toCamelCase('/');
-}
-
-// 对象属性写法
-VarConv.prototype.toDotCase = function () {
-    return this.toCamelCase('.');
 }
 
 module.exports = VarConv;
