@@ -79,12 +79,12 @@ VarConv.prototype.toConst = function () {
 
 // 文件路径写法
 VarConv.prototype.toFilePathCase = function () {
-    return this.toCamelCase('/');
+    return this.var_split.join('/');
 }
 
 // 对象属性写法
 VarConv.prototype.toDotCase = function () {
-    return this.toCamelCase('.');
+    return this.var_split.join('.');
 }
 
 // 全小写
