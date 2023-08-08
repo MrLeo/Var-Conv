@@ -8,6 +8,7 @@
   "logo": "logo.png",
   "features": [
     {
+      "mainPush": true,
       "code": "to",
       "explain": "变量命名方式转换",
       "icon": "logo.png",
@@ -19,6 +20,7 @@
       ]
     },
     {
+      "mainPush": true,
       "code": "form",
       "explain": "变量命名方式转换",
       "icon": "logo.png",

@@ -11,9 +11,10 @@ function getSetList(var_name, searchWord, not_loop) {
       sort = 255
     // 检查搜索关键词
     if (!searchWord || (sort = full_search.indexOf(searchWord)) >= 0) {
-      console.log(searchWord, full_search, sort)
+      // console.log(searchWord, full_search, sort)
       list.push({
         title: var_conv['to' + name](),
+        text: var_conv['to' + name](),
         description: var_conv.maps[name].title,
         sort: sort,
       })

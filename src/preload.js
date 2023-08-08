@@ -55,3 +55,12 @@ function enterText(text) {
         utools.simulateKeyboardTap('v', 'ctrl')
     }
 }
+
+function callback({ code, type, payload }) {
+  const list = getSetList(payload, false, true) || []
+  return list.splice(0, 6)
+}
+function selectCallback({ code, type, payload, option }) {
+    enterText(option.text)
+}
+utools.onMainPush(callback, selectCallback)
